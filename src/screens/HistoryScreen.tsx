@@ -47,7 +47,7 @@ export default function HistoryScreen({ navigate }: Props) {
 
           {/* Sample Data Notice */}
           <p className="font-['Geist:Regular',sans-serif] text-[#94a3b8] text-[12px] leading-[1.4]">
-            Sample transaction records for this prototype.
+            Transaction records for this bank.
           </p>
 
           {/* Summary */}
