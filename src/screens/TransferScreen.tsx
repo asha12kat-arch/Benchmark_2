@@ -21,6 +21,7 @@ export default function TransferScreen({ navigate }: Props) {
   const [recipient, setRecipient] = useState("");
   const [amount, setAmount] = useState("");
   const [memo, setMemo] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
   const [selectedRecipient, setSelectedRecipient] =
     useState<(typeof RECIPIENTS)[0] | null>(null);
 
@@ -35,16 +36,21 @@ export default function TransferScreen({ navigate }: Props) {
       !amount.trim() ||
       !Number.isFinite(enteredAmount) ||
       enteredAmount <= 0 ||
-      exceedsAvailableBalance
+      exceedsAvailableBalance ||
+      isProcessing
     ) {
       return;
     }
 
-    navigate("transfer-review", {
-      recipient: selectedRecipient,
-      amount,
-      memo,
-    });
+    setIsProcessing(true);
+
+    window.setTimeout(() => {
+      navigate("transfer-review", {
+        recipient: selectedRecipient,
+        amount,
+        memo,
+      });
+    }, 1800);
   }
 
   const canContinue =
@@ -217,7 +223,10 @@ export default function TransferScreen({ navigate }: Props) {
                 type="text"
                 placeholder="Search recipient..."
                 value={recipient}
-                onChange={(e) => setRecipient(e.target.value)}
+                onChange={(e) => {
+                  setRecipient(e.target.value);
+                  setSelectedRecipient(null);
+                }}
                 className="flex-1 bg-transparent border-0 outline-none font-['Geist:Regular',sans-serif] text-[14px] text-white placeholder:text-[#94a3b8]"
               />
             </div>
@@ -329,8 +338,7 @@ export default function TransferScreen({ navigate }: Props) {
                 role="alert"
                 className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]"
               >
-                Amount exceeds the balance of $
-                {formattedBalance}.
+                Amount exceeds the available balance of ${formattedBalance}.
               </p>
             )}
 
@@ -357,20 +365,37 @@ export default function TransferScreen({ navigate }: Props) {
           <button
             type="button"
             onClick={handleContinue}
-            disabled={!canContinue}
-            className="content-stretch flex h-[52px] items-center justify-center relative rounded-[14px] shrink-0 w-full border-0 cursor-pointer transition-all disabled:cursor-not-allowed"
+            disabled={!canContinue || isProcessing}
+            aria-busy={isProcessing}
+            className="content-stretch flex h-[52px] items-center justify-center relative rounded-[14px] shrink-0 w-full border-0 cursor-pointer transition-all disabled:cursor-not-allowed disabled:opacity-60"
             style={{
-              background: canContinue
-                ? "#8b1a2b"
-                : "rgba(139,26,43,0.3)",
-              boxShadow: canContinue
-                ? "0px 10px 12px rgba(139,26,43,0.2)"
-                : "none",
+              background:
+                canContinue && !isProcessing
+                  ? "#8b1a2b"
+                  : "rgba(139,26,43,0.3)",
+              boxShadow:
+                canContinue && !isProcessing
+                  ? "0px 10px 12px rgba(139,26,43,0.2)"
+                  : "none",
             }}
           >
-            <p className="font-['Geist:Bold',sans-serif] font-bold leading-[normal] relative shrink-0 text-[16px] text-white">
-              Continue
-            </p>
+            {isProcessing ? (
+              <span
+                className="flex items-center justify-center gap-[10px] font-['Geist:Bold',sans-serif] font-bold text-[16px] text-white"
+                role="status"
+                aria-live="polite"
+              >
+                <span
+                  aria-hidden="true"
+                  className="size-[18px] rounded-full border-2 border-white/30 border-t-white animate-spin"
+                />
+                Preparing transfer...
+              </span>
+            ) : (
+              <p className="font-['Geist:Bold',sans-serif] font-bold leading-[normal] relative shrink-0 text-[16px] text-white">
+                Continue
+              </p>
+            )}
           </button>
 
           <div className="h-4 shrink-0" />
