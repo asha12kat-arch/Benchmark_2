@@ -1,0 +1,11 @@
+{
+  "title": "BENCHMARK BANK",
+  "description": "Hold streamlines task management for teams, enabling efficient collaboration and tracking of project progress to enhance productivity and accountability.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

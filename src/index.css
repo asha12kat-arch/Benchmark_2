@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&family=Geist:wght@100..900&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Young Serif:Regular';
+  src: url('https://static.figma.com/font/YoungSerif-Regular_1') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist:Regular';
+  src: url('https://static.figma.com/font/Geist_wght__1') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist:Medium';
+  src: url('https://static.figma.com/font/Geist_wght__1') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist:SemiBold';
+  src: url('https://static.figma.com/font/Geist_wght__1') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist:Bold';
+  src: url('https://static.figma.com/font/Geist_wght__1') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.content-stretch {
+  align-content: stretch;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
