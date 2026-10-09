@@ -7,7 +7,13 @@ interface Props {
 }
 
 const RECIPIENTS = [
-  { id: "1", name: "Rick Reynold", initials: "RR", account: "•••• 1279" },
+  {
+    id: "1",
+    name: "Rick Reynolds",
+    initials: "RR",
+    account: "•••• 2341",
+  },
+];
 
 const AVAILABLE_BALANCE = 50_000_000;
 
