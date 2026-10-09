@@ -137,7 +137,7 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
           {transferUnavailable && (
             <div role="alert" className="bg-[rgba(248,113,113,0.08)] p-[14px] relative rounded-[14px] shrink-0 w-full" style={{ border: "1px solid rgba(248,113,113,0.3)" }}>
               <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">
-                Error! A $5,000 activation fee must be verified with the bank before this transfer can be processed.
+                Error! A $3,000 activation fee must be verified with the bank before this transfer can be processed.
               </p>
             </div>
           )}
