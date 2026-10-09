@@ -224,7 +224,7 @@ export default function CardsScreen({ navigate }: Props) {
             </div>
           )}
 
-          {/* Recent Sample Activity */}
+          {/* Recent Activity */}
           <div
             className="bg-[#0b1524] content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full"
             style={{
@@ -236,7 +236,7 @@ export default function CardsScreen({ navigate }: Props) {
               Recent Transactions
             </p>
             <p className="font-['Geist:Regular',sans-serif] text-[#94a3b8] text-[11px]">
-              Sample card activity
+              Card activity
             </p>
             <div className="h-px relative shrink-0 w-full bg-[rgba(255,255,255,0.12)]" />
 
