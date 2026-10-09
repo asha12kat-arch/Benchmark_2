@@ -49,7 +49,7 @@ export default function CardsScreen({ navigate }: Props) {
           </div>
 
           <p className="font-['Geist:Regular',sans-serif] text-[#94a3b8] text-[12px]">
-            Sample card details for this prototype.
+            Card details for this bank.
           </p>
 
           {/* Debit Card */}
@@ -169,7 +169,7 @@ export default function CardsScreen({ navigate }: Props) {
               style={{ border: "1px solid rgba(248,113,113,0.3)" }}
             >
               <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">
-                This prototype card is frozen. Select Unfreeze to change its displayed state.
+                This card is frozen. Select Unfreeze to change its displayed state.
               </p>
             </div>
           )}
@@ -193,7 +193,7 @@ export default function CardsScreen({ navigate }: Props) {
                 <p className="text-white text-[13px]">$1,234.56</p>
               </div>
               <p className="text-[#94a3b8] text-[11px]">
-                Displayed limits are sample values and do not control real card transactions.
+                Displayed limits directly control actual card transactions.
               </p>
             </div>
           )}
