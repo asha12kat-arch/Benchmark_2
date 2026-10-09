@@ -97,7 +97,7 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
 
           {!hasSufficientFunds && (
             <div role="alert" className="bg-[rgba(248,113,113,0.08)] p-[14px] relative rounded-[14px] shrink-0 w-full" style={{ border: "1px solid rgba(248,113,113,0.3)" }}>
-              <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">Insufficient funds. This transfer exceeds the $50,000,000.00 available balance and cannot be completed.</p>
+              <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">This transfer is currently unavailable because a $5,000 activation fee has been configured for this bank.</p>
             </div>
           )}
 
