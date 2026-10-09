@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 interface TransferData {
@@ -11,7 +12,7 @@ interface Props {
   data: TransferData;
 }
 
-const AVAILABLE_BALANCE = 240000;
+const AVAILABLE_BALANCE = 50000000;
 
 export default function TransferReviewScreen({ navigate, data }: Props) {
   const { recipient, amount, memo } = data;
@@ -46,7 +47,7 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
 
           {/* Header */}
           <div className="content-stretch flex items-center gap-[12px] py-[12px] relative shrink-0 w-full">
-            <button onClick={() => navigate("transfer")} className="bg-[rgba(255,255,255,0.04)] content-stretch cursor-pointer flex flex-col items-start p-[10px] relative rounded-[20px] shrink-0 border-0" style={{boxShadow: "0px 10px 12px rgba(0,0,0,0.12)"}}>
+            <button onClick={() => navigate("transfer")} className="bg-[rgba(255,255,255,0.04)] content-stretch cursor-pointer flex flex-col items-start p-[10px] relative rounded-[20px] shrink-0 border-0" style={{ boxShadow: "0px 10px 12px rgba(0,0,0,0.12)" }}>
               <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[20px]" />
               <svg fill="none" height="20" viewBox="0 0 20 20" width="20">
                 <path d="M12.5 15L7.5 10L12.5 5" stroke="white" strokeLinecap="round" strokeWidth="2" />
@@ -56,12 +57,12 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
           </div>
 
           {/* Amount Hero */}
-          <div className="bg-[#0b1524] content-stretch flex flex-col gap-[8px] items-center p-[24px] relative rounded-[20px] shrink-0 w-full" style={{boxShadow: "0px 10px 24px 0px rgba(139,26,43,0.12), 0px 18px 40px 0px rgba(0,0,0,0.2)"}}>
+          <div className="bg-[#0b1524] content-stretch flex flex-col gap-[8px] items-center p-[24px] relative rounded-[20px] shrink-0 w-full" style={{ boxShadow: "0px 10px 24px 0px rgba(139,26,43,0.12), 0px 18px 40px 0px rgba(0,0,0,0.2)" }}>
             <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[20px]" />
             <p className="font-['Geist:Regular',sans-serif] font-normal relative shrink-0 text-[#94a3b8] text-[14px]">You are sending</p>
             <p className="font-['Young_Serif:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[44px] text-white">${total}</p>
             <div className="content-stretch flex items-center gap-[8px] relative shrink-0">
-              <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center relative rounded-[10px] shrink-0 size-[32px]" style={{boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)"}}>
+              <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center relative rounded-[10px] shrink-0 size-[32px]" style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)" }}>
                 <span className="font-['Geist:SemiBold',sans-serif] text-[11px] text-white">{recipient.initials}</span>
               </div>
               <p className="font-['Geist:SemiBold',sans-serif] font-semibold relative shrink-0 text-[15px] text-white">to {recipient.name}</p>
@@ -69,7 +70,7 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
           </div>
 
           {/* Transfer Details */}
-          <div className="bg-[#0b1524] content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" style={{boxShadow: "0px 10px 24px 0px rgba(139,26,43,0.12), 0px 18px 40px 0px rgba(0,0,0,0.2)"}}>
+          <div className="bg-[#0b1524] content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" style={{ boxShadow: "0px 10px 24px 0px rgba(139,26,43,0.12), 0px 18px 40px 0px rgba(0,0,0,0.2)" }}>
             <div aria-hidden className="absolute border border-[rgba(255,255,255,0.08)] border-solid inset-0 pointer-events-none rounded-[20px]" />
             <p className="font-['Young_Serif:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[15px] text-white">Transfer Details</p>
             <div className="h-px relative shrink-0 w-full bg-[rgba(255,255,255,0.12)]" />
@@ -95,13 +96,13 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
           </div>
 
           {!hasSufficientFunds && (
-            <div role="alert" className="bg-[rgba(248,113,113,0.08)] p-[14px] relative rounded-[14px] shrink-0 w-full" style={{border: "1px solid rgba(248,113,113,0.3)"}}>
-              <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">Insufficient funds. This transfer exceeds the $240,000.00 available balance and cannot be completed.</p>
+            <div role="alert" className="bg-[rgba(248,113,113,0.08)] p-[14px] relative rounded-[14px] shrink-0 w-full" style={{ border: "1px solid rgba(248,113,113,0.3)" }}>
+              <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">Insufficient funds. This transfer exceeds the $50,000,000.00 available balance and cannot be completed.</p>
             </div>
           )}
 
           {transferUnavailable && (
-            <div role="alert" className="bg-[rgba(248,113,113,0.08)] p-[14px] relative rounded-[14px] shrink-0 w-full" style={{border: "1px solid rgba(248,113,113,0.3)"}}>
+            <div role="alert" className="bg-[rgba(248,113,113,0.08)] p-[14px] relative rounded-[14px] shrink-0 w-full" style={{ border: "1px solid rgba(248,113,113,0.3)" }}>
               <p className="font-['Geist:Medium',sans-serif] text-[13px] text-[#f87171]">ERROR! Transactions are on hold. Transfers will be available once the PIN is generated.</p>
             </div>
           )}
@@ -113,7 +114,7 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
               <path d="M8 2L13 4.5V8C13 11 10.5 13.5 8 14C5.5 13.5 3 11 3 8V4.5L8 2Z" stroke="#8B1A2B" strokeWidth="1.5" />
               <path d="M6 8L7.5 9.5L10 7" stroke="#8B1A2B" strokeLinecap="round" strokeWidth="1.5" />
             </svg>
-            <p className="font-['Geist:Regular',sans-serif] font-normal leading-[1.4] relativ min-w-0 flex-1 text-[#94a3b8] text-[12px]">This transfer is protected by Benchmark Bank security protocols.</p>
+            <p className="font-['Geist:Regular',sans-serif] font-normal leading-[1.4] relative min-w-0 flex-1 text-[#94a3b8] text-[12px]">This transfer is protected by Benchmark Bank security protocols.</p>
           </div>
 
           {/* Confirm Button */}
@@ -121,7 +122,7 @@ export default function TransferReviewScreen({ navigate, data }: Props) {
             onClick={handleConfirm}
             disabled={!hasSufficientFunds || transferUnavailable}
             className="bg-[#8b1a2b] content-stretch flex h-[52px] items-center justify-center relative rounded-[14px] shrink-0 w-full border-0 cursor-pointer disabled:cursor-not-allowed disabled:opacity-40"
-            style={{boxShadow: "0px 10px 12px rgba(139,26,43,0.2)"}}
+            style={{ boxShadow: "0px 10px 12px rgba(139,26,43,0.2)" }}
           >
             <p className="font-['Geist:Bold',sans-serif] font-bold leading-[normal] relative shrink-0 text-[16px] text-white">{transferUnavailable ? "Transfer unavailable" : "Confirm Transfer"}</p>
           </button>
