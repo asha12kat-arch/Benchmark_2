@@ -161,7 +161,7 @@ export default function HomeScreen({ navigate }: Props) {
               <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
                 <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
                   <div className="bg-[#8b1a2b] relative rounded-[6px] shrink-0 size-[24px]" />
-                  <p className="font-['Young_Serif:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[14px] text-white">Benchmark Bank — DEMO</p>
+                  <p className="font-['Young_Serif:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[14px] text-white">Benchmark Bank</p>
                 </div>
                 <p className="font-['Geist:Bold',sans-serif] font-bold leading-[normal] relative shrink-0 text-[11px] text-white">DEBIT</p>
               </div>
